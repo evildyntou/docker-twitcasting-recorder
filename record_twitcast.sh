@@ -86,8 +86,8 @@ while true; do
 
   # Convert to mp4
   echo "$LOG_PREFIX [INFO] Start convert ws_${FNAME}.ts to mp4..."
-  ffmpeg -i "/download/ws_${FNAME}.ts" -c copy -movflags +faststart "/download/${FNAME}.mp4" &
-
+  ffmpeg -i "/download/ws_${FNAME}.ts" -c copy -movflags +faststart "/download/${FNAME}.mp4" 
+  rclone copy "/download/${FNAME}.mp4" 
   # Exit if we just need to record current stream
   [[ "$2" == "once" ]] && break
 done
