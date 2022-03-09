@@ -4,6 +4,7 @@ WORKDIR /
 COPY twitcasting-recorder/requirements.txt .
 
 RUN apk add --no-cache --virtual build-deps \
+      rclone \
       gcc \
       libc-dev && \
     apk add --no-cache \
